@@ -6,7 +6,7 @@ BiCycure is developed using Golang for the backend, PostgreSQL for the database 
 
 The aims of this PoC are to highlight the implementations of specific features in order to enhance the desired quality attributes mentioned in our first report. The user experience is an essential part of BiCycure, as each operation needs to be as smooth as possible in order to ensure wide scale adoption. To achieve this, strong usability testing is needed.
 
-<img src="../../Images/poc.mp4" alt="Poc Working" width="300" height="400">
+<img src="Images/poc.mp4" alt="Poc Working" width="300" height="400">
 
 ## Installation
 

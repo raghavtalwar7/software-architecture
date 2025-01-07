@@ -1,0 +1,32 @@
+@startuml
+package "BiCycure Deployment" {
+    
+    package "Mobile Application\n(Flutter)" {
+        [User Interface]
+        [Registration Screen]
+        [Scan RFID Screen]
+        [Bike Management Screen]
+        [API Client]
+    }
+
+    package "Backend Server\n(Golang)" {
+        [REST API]
+        [Business Logic]
+        [User Authentication]
+    }
+
+    package "Database\n(PostgreSQL)" {
+        [User Data]
+        [Bike Records]
+    }
+
+    package "NFC Module" {
+        [RFID Scanning]
+        [Device Interactions]
+    }
+}
+
+[Mobile Application\n(Flutter)] --> [Backend Server\n(Golang)] : API Calls
+[Backend Server\n(Golang)] --> [Database\n(PostgreSQL)] : Data Operations
+[Mobile Application\n(Flutter)] --> [NFC Module] : Interact with RFID
+@enduml

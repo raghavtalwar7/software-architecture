@@ -1,0 +1,97 @@
+@startuml
+
+class Bicycle {
+  +String bicycleId
+  +String frameNumber
+  +String RFID
+  +BicycleStatus status
+  +Owner owner
+}
+
+class Owner {
+  +String ownerId
+  +String name
+  +String email
+  +String phoneNumber
+  +List<Bicycle> ownedBicycles
+}
+
+class TheftReport {
+  +String reportId
+  +Bicycle bicycle
+  +Date reportDate
+  +TheftStatus status
+  +Double rewardAmount
+}
+
+class LawEnforcement {
+  +String officerId
+  +String name
+  +String station
+  +List<TheftReport> reportsInvestigated
+}
+
+class Reward {
+  +String rewardId
+  +TheftReport theftReport
+  +Double amount
+  +RewardStatus status
+}
+
+class User {
+  +String userId
+  +String username
+  +String password
+  +String role
+}
+
+class Transaction {
+  +String transactionId
+  +Reward reward
+  +User participant
+  +Double amount
+  +TransactionStatus status
+  +Date transactionDate
+}
+
+class Location {
+  +String locationId
+  +Double latitude
+  +Double longitude
+  +String address
+  +Date scannedAt
+}
+
+enum BicycleStatus {
+  Available
+  Stolen
+  Recovered
+}
+
+enum TheftStatus {
+  Reported
+  UnderInvestigation
+  Resolved
+}
+
+enum RewardStatus {
+  Active
+  Claimed
+  Expired
+}
+
+enum TransactionStatus {
+  Pending
+  Completed
+  Failed
+}
+
+Owner "1" -- "0..*" Bicycle : owns >
+Bicycle "1" -- "0..1" TheftReport : reported >
+TheftReport "1" -- "0..1" Reward : associated >
+LawEnforcement "0..*" -- "0..*" TheftReport : investigates >
+User "1" -- "0..*" Transaction : participates >
+Transaction "1" -- "1" Reward : concerns >
+Bicycle "0..*" -- "0..*" Location : lastScannedAt >
+
+@enduml

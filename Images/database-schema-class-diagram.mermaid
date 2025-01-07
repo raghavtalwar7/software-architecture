@@ -1,0 +1,79 @@
+classDiagram
+    class users {
+        +INT user_id
+        +VARCHAR government_id
+        +VARCHAR first_name
+        +VARCHAR last_name
+        +VARCHAR email
+        +VARCHAR phone_number
+        +VARCHAR password_hash
+        +TIMESTAMP created_at
+        +TIMESTAMP updated_at
+    }
+
+    class bicycles {
+        +INT bicycle_id
+        +VARCHAR rfid_tag
+        +VARCHAR brand
+        +VARCHAR model
+        +VARCHAR color
+        +VARCHAR frame_number
+        +INT current_owner_id
+        +VARCHAR status
+        +TIMESTAMP created_at
+        +TIMESTAMP updated_at
+    }
+
+    class ownership_history {
+        +INT history_id
+        +INT bicycle_id
+        +INT previous_owner_id
+        +INT new_owner_id
+        +TIMESTAMP transfer_date
+    }
+
+    class theft_report_status {
+        +INT status_id
+        +VARCHAR status_name
+    }
+
+    class theft_reports {
+        +INT report_id
+        +INT bicycle_id
+        +INT reporter_id
+        +TIMESTAMP theft_date
+        +VARCHAR theft_location
+        +TEXT description
+        +DECIMAL reward_amount
+        +INT status_id
+        +TIMESTAMP created_at
+        +TIMESTAMP updated_at
+    }
+
+    class bicycle_scans {
+        +INT scan_id
+        +INT bicycle_id
+        +INT user_id
+        +TIMESTAMP scan_date
+        +VARCHAR scan_location
+    }
+
+    class user_roles {
+        +INT role_id
+        +INT user_id
+        +VARCHAR role
+    }
+
+    users "1" -- "0..*" bicycles : owns
+    users "1" -- "0..*" ownership_history : previous owner
+    users "1" -- "0..*" ownership_history : new owner
+    users "1" -- "0..*" theft_reports : reports
+    users "1" -- "0..*" bicycle_scans : scans
+    users "1" -- "0..*" user_roles : has
+
+    bicycles "1" -- "0..*" ownership_history : transferred
+    bicycles "1" -- "0..*" theft_reports : reported stolen
+    bicycles "1" -- "0..*" bicycle_scans : scanned
+
+    theft_report_status "1" -- "0..*" theft_reports : has
+

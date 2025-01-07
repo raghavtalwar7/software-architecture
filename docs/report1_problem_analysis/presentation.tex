@@ -1,0 +1,155 @@
+\documentclass{beamer}
+
+% Theme choice
+\usetheme{Madrid}
+
+% Packages
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+% Title page details
+\title{BiCycure: Tackling Bicycle Theft}
+\subtitle{A Comprehensive Solution to Modernize Bicycle Theft resolution}
+\author{Software Architecture - Team  28}
+\institute{TU Delft}
+\date{\today}
+
+\begin{document}
+
+% Title slide
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Table of Contents slide
+\begin{frame}{Table of Contents}
+    \tableofcontents
+\end{frame}
+
+% Problem Description
+\section{Problem Description}
+\begin{frame}{Problem Description}
+    \begin{itemize}
+        \item In 2023, 1.3 bicycles per person in the Netherlands.
+        \item Between 468,000 and 772,000 bicycles stolen annually.
+        \item Intentionally handling stolen goods is illegal with jail time or fines up to €87,000.
+        \item The current process for checking if a bicycle is stolen is manual and inefficient.
+    \end{itemize}
+\end{frame}
+
+% Existing Solutions
+\section{Existing Solutions}
+\begin{frame}{Stop Heling and RDW fietsendiefstalregister}
+    \begin{block}{Stop Heling}
+        \begin{itemize}
+            \item Mobile app for users to register frame numbers and check against a database of stolen bikes.
+            \item Does not allow theft reporting—users must report to police separately.
+        \end{itemize}
+    \end{block}
+    
+    \begin{block}{RDW fietsendiefstalregister}
+        \begin{itemize}
+            \item Public database for stolen bicycles.
+            \item No mobile app.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Problems with Existing Solutions}
+    \begin{itemize}
+        \item Manual entry of frame numbers by owners.
+        \item No direct theft report feature in apps.
+        \item Only manual frame number checks; little automation in theft recovery.
+    \end{itemize}
+\end{frame}
+
+% Proposed Solution
+\section{Proposed Solution}
+\begin{frame}{BiCycure: A Modern Solution}
+    \begin{itemize}
+        \item RFID tags embedded in bicycles for tamper-proof identification.
+        \item Mobile app for ownership verification, theft declaration, and transfer of ownership.
+        \item Seamless ownership transfer between individuals with bilateral confirmation.
+        \item Community-driven recovery with public theft reports and rewards.
+    \end{itemize}
+\end{frame}
+
+% Features of BiCycure
+\begin{frame}{Key Envisioned Features of BiCycure}
+    \begin{block}{Verification of Ownership}
+        \begin{itemize}
+            \item RFID tags allow authorities and individuals to quickly verify who is the owner.
+            \item Tamper-proof tags reduce theft attempts.
+        \end{itemize}
+    \end{block}
+    
+    \begin{block}{Transfer of Ownership}
+        \begin{itemize}
+            \item Need: smooth and traceable digital ownership transfer.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Key Envisioned Features of BiCycure (cont'd)}
+    \begin{block}{Declaration of Theft}
+        \begin{itemize}
+            \item Owners can report theft directly in the app.
+            \item Public theft declarations and rewards encourage community involvement.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+
+% Ethical Considerations
+\section{Ethical Considerations}
+\begin{frame}{Ethical Considerations and Privacy}
+    \begin{itemize}
+        \item Large-scale scanning can lead to tracking of bicycles and owners.
+        \item System usability must be inclusive, so everyone benefits from the service.
+        \item Personal data needs to only become available once a theft takes place.
+    \end{itemize}
+\end{frame}
+
+% Solution Architecture
+\section{Solution Architecture}
+\begin{frame}{System Architecture Overview}
+    \begin{itemize}
+        \item \textbf{RFID Tags}: Unique identifiers for bicycles.
+        \item \textbf{Mobile App}: Scans tags, reports thefts, and verifies ownership.
+        \item \textbf{Database}: Relational database for storing bicycle and owner information.
+        \item \textbf{API Layer}: RESTful API to communicate between the mobile app and database.
+    \end{itemize}
+\end{frame}
+
+
+% Roadmap
+\section{Roadmap}
+\begin{frame}{Proposed Roadmap}
+    \begin{itemize}
+        \item \textbf{Phase 1}: Proof of concept with a small user base.
+        \item \textbf{Phase 2}: Expand RFID usage to major bicycle retailers.
+        \item \textbf{Phase 3}: Collaborate with insurance companies and law enforcement.
+        \item \textbf{Phase 4}: Scale to a national level, integrating additional features.
+    \end{itemize}
+\end{frame}
+
+
+% Conclusion
+\section{Conclusion}
+\begin{frame}{Conclusion}
+    \begin{itemize}
+        \item BiCycure offers a comprehensive solution for bicycle theft prevention and recovery.
+        \item Aims to modernize bicycle ownership.
+        \item Strong partnerships with law enforcement, retailers, and insurers will enhance adoption and success (read our report :).
+    \end{itemize}
+\end{frame}
+
+% Thank You slide
+\begin{frame}
+    \centering
+    \Huge Thank You! \\
+    \normalsize Questions?
+\end{frame}
+
+\end{document}
+

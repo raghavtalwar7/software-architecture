@@ -1,0 +1,6 @@
+projectKey=BiCycure
+serverUrl=http://localhost:9000
+serverVersion=10.1.0.73491
+dashboardUrl=http://localhost:9000/dashboard?id=BiCycure
+ceTaskId=AZJ8FlsVK08CnfRgFxFI
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AZJ8FlsVK08CnfRgFxFI
